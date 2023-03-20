@@ -20,7 +20,7 @@ namespace Thread2
 
     public  partial class MainWindow : Window
     {
-        Random random = new Random();   
+        Random random = new Random();
         int[] mass;
         public  MainWindow()
         {
@@ -36,7 +36,7 @@ namespace Thread2
         }
         void PrintW()
         {
-            mass=new int[15];
+            mass=new int[20];
             for (int i = 0; i < mass.Length; i++)
             {
                 mass[i] = random.Next(30);
@@ -55,7 +55,12 @@ namespace Thread2
         }
         void PrintS()
         {
-
+            char[] mass1 = new char[20];
+            for (int j = 0; j < mass1.Length; j++)
+            {
+                mass1[j] = (char)random.Next(0x0410, 0x44F);
+                lab1.Content += $"\n{mass1[j]} ";
+            }
         }
     }
 }
